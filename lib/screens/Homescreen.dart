@@ -23,25 +23,35 @@ class _HomescreenState extends State<Homescreen>
         title: Text("Whatsapp clone"),
         actions: [
           IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-          PopupMenuButton<String>(itemBuilder: (BuildContext context) {
-            return [
-              PopupMenuItem(
-                child: Text("New group"), value: "New group",
-              ),
-              PopupMenuItem(
-                child: Text("New broadcast"), value: "New broadcast",
-              ),
-              PopupMenuItem(
-                child: Text("Whatsapp web"), value: "Whatsapp web",
-              ),
-              PopupMenuItem(
-                child: Text("Started message"), value: "Started message",
-              ),
-              PopupMenuItem(
-                child: Text("Setting"), value: "Setting",
-              ),
-            ];
-          })
+          PopupMenuButton<String>(
+            onSelected: (value) {
+              print(value);
+            },
+            itemBuilder: (BuildContext context) {
+              return [
+                PopupMenuItem(
+                  child: Text("New group"),
+                  value: "New group",
+                ),
+                PopupMenuItem(
+                  child: Text("New broadcast"),
+                  value: "New broadcast",
+                ),
+                PopupMenuItem(
+                  child: Text("Whatsapp web"),
+                  value: "Whatsapp web",
+                ),
+                PopupMenuItem(
+                  child: Text("Started message"),
+                  value: "Started message",
+                ),
+                PopupMenuItem(
+                  child: Text("Setting"),
+                  value: "Setting",
+                ),
+              ];
+            },
+          )
         ],
         bottom: TabBar(
           controller: _controller,
